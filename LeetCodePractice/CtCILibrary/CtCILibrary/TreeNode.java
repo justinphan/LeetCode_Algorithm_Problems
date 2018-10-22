@@ -4,14 +4,14 @@ package CtCILibrary;
  * character.
  */
 public class TreeNode {
-	public int data;      
+	public int val;      
 	public TreeNode left;    
 	public TreeNode right; 
 	public TreeNode parent;
 	private int size = 0;
 
 	public TreeNode(int d) {
-		data = d;
+		val = d;
 		size = 1;
 	}
 	
@@ -30,7 +30,7 @@ public class TreeNode {
 	}
 	
 	public void insertInOrder(int d) {
-		if (d <= data) {
+		if (d <= val) {
 			if (left == null) {
 				setLeftChild(new TreeNode(d));
 			} else {
@@ -52,13 +52,13 @@ public class TreeNode {
 	
 	public boolean isBST() {
 		if (left != null) {
-			if (data < left.data || !left.isBST()) {
+			if (val < left.val || !left.isBST()) {
 				return false;
 			}
 		}
 		
 		if (right != null) {
-			if (data >= right.data || !right.isBST()) {
+			if (val >= right.val || !right.isBST()) {
 				return false;
 			}
 		}		
@@ -73,11 +73,11 @@ public class TreeNode {
 	}
 	
 	public TreeNode find(int d) {
-		if (d == data) {
+		if (d == val) {
 			return this;
-		} else if (d <= data) {
+		} else if (d <= val) {
 			return left != null ? left.find(d) : null;
-		} else if (d > data) {
+		} else if (d > val) {
 			return right != null ? right.find(d) : null;
 		}
 		return null;
