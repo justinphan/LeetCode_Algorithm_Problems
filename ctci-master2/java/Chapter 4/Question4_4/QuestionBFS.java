@@ -14,7 +14,7 @@ public class QuestionBFS {
 		/* "Visit" the root */
 		LinkedList<TreeNode> current = new LinkedList<TreeNode>();
 		if (root != null) {
-			current.add(root);
+			current.add(root); //hello
 		}
 		
 		while (current.size() > 0) {
